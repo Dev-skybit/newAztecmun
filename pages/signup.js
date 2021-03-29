@@ -50,7 +50,6 @@ export default function signup() {
 
           <h1>Crear Cuenta</h1>
           <div className="form__input">
-            Correo Electrónico
             <input
               name="email"
               type="email"
@@ -58,9 +57,10 @@ export default function signup() {
               autoComplete="off"
               required
             />
+            <label htmlFor="email">Correo Elctrónico</label>
           </div>
+
           <div className="form__input">
-            Contraseña
             <input
               name="password"
               type="password"
@@ -68,7 +68,18 @@ export default function signup() {
               autoComplete="off"
               required
             />
+            <label htmlFor="password">Contraseña</label>
           </div>
+
+          <div className="form__input">
+            <select name="select" id="" required>
+              <option disabled selected>Participación</option>
+              <option value="secretaria">Secretaría</option>
+              <option value="comite">Comité</option>
+              <option value="delegado">Delegado</option>
+            </select>
+          </div>
+
           <button className="form__button">Crear cuenta</button>
           <p>
             ¿Ya tienes cuenta?

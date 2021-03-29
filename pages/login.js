@@ -50,7 +50,7 @@ export default function login() {
 
           <h1>Inicia Sesión</h1>
           <div className="form__input">
-            Correo Electrónico
+
             <input
               name="email"
               type="email"
@@ -58,9 +58,10 @@ export default function login() {
               autoComplete="off"
               required
             />
+            <label htmlFor="email">Correo Electrónico</label>
           </div>
+
           <div className="form__input">
-            Contraseña
             <input
               name="password"
               type="password"
@@ -68,7 +69,9 @@ export default function login() {
               autoComplete="off"
               required
             />
+            <label htmlFor="password">Contraseña</label>
           </div>
+
           <button className="form__button">Iniciar Sesión</button>
           <p>
             ¿Aún no tienes cuenta?
@@ -77,7 +80,8 @@ export default function login() {
             </span>
           </p>
         </form>
-      )}
-    </div>
+      )
+      }
+    </div >
   )
 }
