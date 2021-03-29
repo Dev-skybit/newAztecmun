@@ -1,0 +1,544 @@
+.homeWrapper {
+  position: relative;
+
+  min-height: 100vh;
+  max-height: 100vh;
+  min-width: 100%;
+  max-width: 100%;
+
+  overflow-x: hidden;
+  overflow-y: scroll;
+  scroll-behavior: smooth;
+
+  padding-bottom: 100px;
+
+  @media (max-width: 768px) {
+    height: auto;
+  }
+}
+
+.header {
+  position: relative;
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  height: 100vh;
+  width: 100%;
+
+  &__div {
+    position: absolute;
+    bottom: 0;
+
+    height: 40px;
+    width: 100%;
+  }
+
+  &__title {
+    position: relative;
+
+    width: 80%;
+
+    h1 {
+      text-transform: uppercase;
+      font-size: 2.5rem;
+      color: $blue;
+
+      position: absolute;
+      top: -1%;
+      right: 0;
+    }
+
+    img {
+      width: 100%;
+      height: 100%;
+    }
+  }
+
+  @media (max-width: 320px) {
+    height: 20vh;
+
+    h1 {
+      font-size: .8rem;
+
+      top: -1%;
+    }
+
+    &__div {
+      height: 20px;
+    }
+  }
+
+  @media (min-width: 320px) and (max-width: 768px) {
+    height: 30vh;
+
+    h1 {
+      font-size: 1rem;
+
+      top: -1%;
+    }
+
+    &__div {
+      height: 20px;
+    }
+  }
+
+  @media (min-width: 768px) and (max-width: 1024px) {
+    height: 80vh;
+
+    h1 {
+      font-size: 2rem;
+
+      top: -1%;
+    }
+  }
+}
+
+.about {
+  @include container;
+
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  grid-template-rows: auto 1fr;
+  gap: 24px;
+
+  &__card1 {
+    grid-column: 1;
+    grid-row: 1;
+
+    display: flex;
+    flex-direction: column;
+
+    &__title {
+      color: $red;
+    }
+
+    &__buttons {
+
+      &__button {
+        font-size: 1.2rem;
+        color: $white;
+
+        display: inline-block;
+
+        margin-right: 20px;
+        padding: .5rem 1.5rem;
+
+        border: 3px solid $greenAqua;
+        background: $greenAqua;
+        border-radius: 10px;
+        transition: $trans;
+        cursor: pointer;
+
+        &--ghost {
+          color: $greenAqua;
+
+          background: transparent;
+        }
+      }
+    }
+  }
+
+  &__card2 {
+    grid-column: 2;
+    grid-row: 1;
+    justify-self: center;
+
+    img {
+      height: 500px;
+      width: 500px;
+
+      margin: auto;
+    }
+
+    &--image2 {
+      display: none
+    }
+  }
+
+  &__card3 {
+    grid-template-columns: 1;
+    grid-row: 2;
+
+    &__title {
+      color: $orange;
+    }
+  }
+
+  &__card4 {
+    grid-template-columns: 2;
+    grid-row: 2;
+
+    &__title {
+      color: $blue;
+    }
+  }
+
+  @media (max-width: 340px) {
+    h1 {
+      font-size: 2rem;
+    }
+  }
+
+  @media (max-width: 768px) {
+    grid-template-columns: 100%;
+    grid-template-rows: 125px repeat(3, auto);
+    gap: 40px;
+
+    &__card1 {
+      grid-column: 1;
+      grid-row: 2;
+
+      &__buttons {
+
+        &__button {
+          font-size: 1rem;
+          text-align: center;
+
+          display: block;
+
+          max-width: 80%;
+
+          margin: 8px auto;
+        }
+      }
+    }
+
+    &__card2 {
+      grid-column: 1;
+      grid-row: 1;
+
+      &--image1 {
+        display: none
+      }
+
+      &--image2 {
+        display: block
+      }
+
+      img {
+        width: 80%;
+        height: 100%;
+      }
+    }
+
+    &__card3 {
+      grid-column: 1;
+      grid-row: 3;
+    }
+
+    &__card4 {
+      grid-column: 1;
+      grid-row: 4;
+    }
+  }
+
+  @media (min-width: 768px) and (max-width: 1024px) {
+    grid-template-columns: repeat(2, 1fr);
+    grid-template-rows: auto;
+
+    &__card1 {
+      grid-column: 1 / 3;
+      grid-row: 1;
+    }
+
+    &__card2 {
+      grid-column: 0;
+      grid-row: 0;
+      display: none;
+    }
+
+    &__card3 {
+      grid-column: 1;
+      grid-row: 2;
+    }
+
+    &__card4 {
+      grid-column: 2;
+      grid-row: 2;
+    }
+  }
+}
+
+.committees {
+  position: relative;
+
+  display: flex;
+  flex-direction: column;
+
+  min-height: fit-content;
+  width: 100%;
+
+  margin: 5vh auto;
+  padding: 10px 5%;
+
+  h1 {
+    font-size: 3rem;
+    margin-bottom: 20px;
+  }
+
+  p {
+    font-size: 1.3rem;
+    line-height: 30px;
+    letter-spacing: 0.5px;
+    margin-bottom: 30px;
+  }
+
+  &__desc {
+    color: $white;
+
+    h1 {
+      text-align: center;
+    }
+  }
+
+  &__cards {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    scroll-snap-type: x mandatory;
+    flex-wrap: wrap;
+
+    height: fit-content;
+
+    overflow-x: scroll;
+
+    &__card {
+      height: 450px;
+      width: 300px;
+
+      margin: 20px 50px;
+      padding: 1rem;
+
+      border-radius: 20px;
+      background: rgba(255, 255, 255, 0.85);
+
+      &__logo {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+
+        height: 25%;
+        width: 100%;
+
+        margin-bottom: 20px;
+
+        img {
+          display: block;
+          max-height: 100%;
+          max-width: 100%;
+        }
+      }
+
+      &__desc {
+        height: 50%;
+        width: 100%;
+
+        margin-bottom: 20px;
+
+        h1 {
+          font-size: 1.5rem;
+        }
+
+        p {
+          color: $black;
+          font-size: 1rem;
+          letter-spacing: 0;
+          line-height: 25px;
+        }
+      }
+
+      &__button {
+        text-align: center;
+
+        color: $white;
+
+        width: 100%;
+        padding: 1rem;
+
+        background: $blue;
+
+        border-radius: 12px;
+        cursor: pointer;
+
+        transition: $trans;
+
+        &:hover {
+          transform: scale(1.02);
+        }
+      }
+    }
+  }
+
+  &__bg {
+    position: absolute;
+    top: 0;
+    left: 0;
+    z-index: -1;
+
+    height: 100%;
+    width: 100%;
+    object-fit: cover;
+  }
+
+  @media (max-width: 1024px) {
+
+    &__desc {
+      p {
+        display: none;
+      }
+    }
+
+    &__cards {
+      flex-wrap: nowrap;
+      justify-content: flex-start;
+
+      &__card {
+        scroll-snap-align: start;
+
+        min-height: 400px;
+        min-width: 260px;
+
+        margin: 16px;
+
+        &__logo {
+          height: 20%;
+        }
+
+        &__desc {
+          height: 60%;
+        }
+      }
+    }
+  }
+
+  @media (min-width: 1024px) {
+    &__committes {
+      &__cards {
+        flex-wrap: wrap;
+      }
+    }
+  }
+}
+
+.secretariesC {
+  @include container;
+
+  max-width: 90%;
+  height: auto;
+
+  &__carousel {
+    height: 100%;
+    width: 90%;
+
+    .rec.rec-arrow:disabled {
+      visibility: hidden;
+    }
+
+    &__card {
+      position: relative;
+
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+
+      height: 100%;
+      width: 100%;
+
+      &__img {
+        height: 30%;
+        width: 50%;
+      }
+
+      &__desc {
+        margin-left: 32px;
+
+        h1 {
+          color: $red;
+        }
+
+        &__more {
+          font-size: 3rem;
+          color: $white;
+
+          display: flex;
+          justify-content: center;
+          align-items: center;
+
+          height: 60px;
+          width: 60px;
+
+          margin-left: 75%;
+
+          background: $red;
+          border-radius: 50%;
+          transition: $trans;
+          cursor: pointer;
+
+          &:hover {
+            transform: scale(1.05);
+          }
+        }
+      }
+    }
+  }
+
+  @media (max-width: 1023px) {
+    @include container;
+
+    max-width: 90%;
+    height: auto;
+
+    &__carousel {
+      height: auto;
+
+      .rec.rec-arrow {
+        display: none;
+      }
+
+      &__card {
+        flex-direction: column;
+
+        &__desc {
+          margin-left: 0;
+          margin-top: 16px;
+        }
+      }
+    }
+  }
+}
+
+.gallery {
+  @include container;
+
+  max-width: 80%;
+
+  img {
+    height: 80vh;
+    width: auto;
+
+    pointer-events: none;
+  }
+
+  .rec.rec-arrow:disabled {
+    visibility: hidden;
+  }
+
+  @media (max-width: 768px) {
+    height: auto;
+
+    img {
+      height: 100%;
+      width: 100%;
+    }
+
+    .rec.rec-arrow {
+      display: none;
+    }
+  }
+
+  @media (max-height: 740px){
+    margin-bottom: 10%;
+  }
+}

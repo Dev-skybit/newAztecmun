@@ -1,0 +1,103 @@
+.sidebar {
+  position: fixed;
+  top: 0;
+  right: 0;
+  z-index: 10;
+
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+
+  height: 100%;
+  width: 80px;
+
+  &__link {
+    font-size: 2rem;
+    color: $white;
+
+    position: relative;
+
+    height: 50px;
+    width: 50px;
+
+    margin: 16px 0;
+
+    border-radius: 15px;
+
+    &:hover span {
+      left: -300%;
+    }
+
+    span {
+      font-size: 1rem;
+
+      position: absolute;
+      top: 20%;
+      left: 300%;
+
+      display: flex;
+      justify-content: center;
+      align-items: center;
+
+      height: 30px;
+      width: 150px;
+
+      padding: 0 1rem;
+
+      border-top-left-radius: 15px;
+      border-bottom-left-radius: 15px;
+      background: $transparent;
+      transition: $trans;
+      pointer-events: none;
+    }
+
+    a {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+
+      height: 100%;
+      width: 100%;
+    }
+
+    &--red {
+      background: $red;
+    }
+
+    &--green {
+      background: $green;
+    }
+
+    &--orange {
+      background: $orange;
+    }
+
+    &--greenAqua {
+      background: $greenAqua;
+    }
+
+    &--blue {
+      background: $blue;
+    }
+  }
+
+
+  @media (min-width: 320px) and (max-width: 768px) {
+    position: fixed;
+    top: calc(100% - 80px);
+    left: 0;
+
+    flex-direction: row;
+    justify-content: space-evenly;
+
+    height: 80px;
+    width: 100%;
+
+    background: $white;
+
+    span {
+      display: none;
+    }
+  }
+}

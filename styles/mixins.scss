@@ -1,0 +1,24 @@
+@mixin container {
+  position: relative;
+
+  height: 90vh;
+  width: 90%;
+
+  margin: 5vh auto 0 auto;
+
+  h1 {
+    font-size: 3rem;
+    margin-bottom: 20px;
+  }
+
+  p {
+    font-size: 1.3rem;
+    line-height: 30px;
+    letter-spacing: 0.5px;
+    margin-bottom: 30px;
+  }
+
+  @media (max-width: 768px){
+    height: auto;
+  }
+}
