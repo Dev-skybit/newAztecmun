@@ -73,7 +73,7 @@ export default function signup() {
 
           <div className="form__input">
             <select name="select" id="" required>
-              <option disabled selected>Participación</option>
+              <option disabled selected hidden>Participación</option>
               <option value="secretaria">Secretaría</option>
               <option value="comite">Comité</option>
               <option value="delegado">Delegado</option>
